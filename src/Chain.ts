@@ -80,15 +80,16 @@ export class Chain
      { 
          let b=Buffer.concat([buff,Buffer.from(Chain.address.toString())])
          _address=b.toString("hex")
-         console.log(_address)
+         //console.log(_address)
          address=new Address(_address)
          address.setTransfer(this)
          this.addresses.push(address.address)
          Chain.address+=1
+         console.log(address)
         
       }
      })
-    console.log(address)
+    
     return address 
      
  }
