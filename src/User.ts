@@ -1,6 +1,6 @@
 import {Chain} from "./Chain";
 export class Address {
-    public transferHistory=[]
+    public transferHistory:any=[]
     private user:string=""
     public address:string=""
     public balance:number=1000
