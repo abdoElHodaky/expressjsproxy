@@ -19,6 +19,9 @@ app.use(json())
 const path = require('path')
 const express=require("express")
 app.use(express.static("/"))
+app.get("/",(req,res)=>{
+  res.sendFile("./docs.txt")
+})
 app.get("/genAddress",(req,res)=>{
   let address=chain.createAddress()
   console.log(address)
