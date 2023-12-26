@@ -1,3 +1,4 @@
+import {Chain} from "./Chain";
 export class Address {
     public transferHistory=[]
     user:string=""
