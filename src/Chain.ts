@@ -13,7 +13,7 @@ export class Chain
       console.log(this.maxTrans)
   }
   add(b){this.blocks.push(b);}
-  checkAddress(address){
+  checkAddress(address:string){
      return this.addresses.includes(address)
   }
   getfee(){return this.fee;}
@@ -29,11 +29,6 @@ export class Chain
    createblock(trans,hash){
      this.add(
        new Block(trans,hash));
-   }
-   
-   contains(hash){
-    let b=this.blocks.filter(b=>b.prevhash==hash);
-     
    }
    
   addtrans(block,from="",to="", amount=0){
