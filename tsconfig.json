@@ -14,7 +14,8 @@
          "experimentalDecorators": true,
          "strictPropertyInitialization": false,
          "emitDecoratorMetadata": true,
-         "allowSyntheticDefaultImports": true
+         "allowSyntheticDefaultImports": true,
+         "noImplicitUseStrict":true
       
    },
    "include": ["src"],
