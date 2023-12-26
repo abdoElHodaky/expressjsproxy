@@ -67,7 +67,7 @@ export class Chain
           if(exists==false){
               _fs.writeFile("chain.json",JSON.stringify(c),{
                   encoding:"uft-8"
-              },(err)=>{
+              },(err:any)=>{
                   if(err) console.log(err)
                   else console.log("done")
               })
