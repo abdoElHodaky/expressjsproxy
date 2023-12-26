@@ -5,7 +5,7 @@ export class Explorer {
   constructor (chain){
     this.chain=chain;
   }
-  getTrans(txhash){
+  getTrans(txhash:string){
     let blocks=this.chain.blocks;
     let trans:Trans[]=[]
   //  blocks=blocks.slice(1,blocks.length)
