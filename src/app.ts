@@ -17,6 +17,12 @@ app.use(json())
 app.get("/",(req,res)=>{
   res.json(chain)
 })
+app.post("/:sender/createTrans",(req,res)=>{
+  let sender=req.params.sender
+  let receiver=req.body.receiver
+  let amount=req.body.amount
+  res.json([sender, receiver, amount])
+})
 app.use((error:any, req:any, res:any, next:any) => {
   console.log(error)
   console.log("Error Handling Middleware called")
