@@ -16,7 +16,7 @@ app.use(cors())
 app.use(json())
 //app.use(apiv1)
 const path = require('path')
-app.use('/static', express.static(path.join(__dirname, 'public')))
+app.use('/static', app.static(path.join(__dirname, 'public')))
 app.get("/getAddress",(req,res)=>{
   let address:any=chain.createAddress()
   res.json(address)
