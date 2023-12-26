@@ -54,7 +54,8 @@ export class Chain
  createAddress(user:string=""):Address {
     let _address:any={};
     let address: Address
-    import("crypto").then(crypt=>{
+    let crypt=require("crypto")
+    /*import("crypto").then(crypt=>{
 
      crypt.randomBytes(56,(err,buff)=>{
      if(err)console.log(err)
@@ -71,6 +72,22 @@ export class Chain
       }
      })
     }).catch(console.log)
+    console.log(address)
+    return address */
+    crypt.randomBytes(56,(err,buff)=>{
+     if(err)console.log(err)
+     else 
+     { 
+         let b=Buffer.concat([buff,Buffer.from(Chain.address.toString())])
+         _address=b.toString("hex")
+         console.log(_address)
+         address=new Address(_address)
+         address.setTransfer(this)
+         this.addresses.push(address.address)
+         Chain.address+=1
+        
+      }
+     })
     console.log(address)
     return address 
      
