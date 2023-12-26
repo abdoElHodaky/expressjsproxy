@@ -53,7 +53,7 @@ export class Chain
   }
  createAddress(user:string=""):Address {
     let crypt:any;
-    import("crypto").then(c=>{
+    import("crypto").then(crypt=>{
 
      crypt.randomBytes(64,(err,buff)=>{
      if(err)console.log(err)
