@@ -5,14 +5,14 @@ export class Address {
     private address:string=""
     private balance:number=1000
     private transfer:Transfer
-    constructor(address,user=""){
+    constructor(address:string,user=""){
         this.address=address
         this.user=user
     }
-    setTransfer(chain){
+    setTransfer(chain:Chain){
         this.transfer=new Transfer(chain)
     }
-    transferTo(to, amount){
+    transferTo(to: Address, amount:number){
         this.transfer.from=this
         this.transfer.to=to
         //this.transfer.amount=amount
@@ -32,10 +32,10 @@ export class Transfer {
  public to:Address=<Address>{}
  private timestamp=0
   private chain:Chain
-  constructor(chain){
+  constructor(chain:Chain){
       this.chain=chain
   }
-  transfer(amount){
+  transfer(amount:number){
       let chain:Chain=this.chain
       if ((chain.checkAddress(this.from.address))
           &&(chain.checkAddress(this.to.address)))
