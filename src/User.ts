@@ -16,7 +16,7 @@ export class Address {
         this.transfer.from=this
         this.transfer.to=to
         //this.transfer.amount=amount
-        this.transfer.transfer(amount)
+        this.transfer.transfer(amount:number)
         this.transferHistory.push({
             from:this.address,
             to:to.address,
