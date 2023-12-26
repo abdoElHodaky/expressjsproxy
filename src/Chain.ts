@@ -67,12 +67,11 @@ export class Chain
       }
      })
     }).then(addr=>{
-     address=new Address(addr)
+    console.log(addr)
+    /*address=new Address(addr)
     address.setTransfer(this)
     this.addresses.push(address.address)
-    Chain.address+=1
-    //console.log(address.address)
-    //return address
+    Chain.address+=1*/
      
     }).catch(console.log)
     console.log(address)
