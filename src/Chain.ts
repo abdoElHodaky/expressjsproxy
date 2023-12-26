@@ -26,12 +26,12 @@ export class Chain
      block.type="initial";
      this.add(block);
    }
-   createblock(trans,hash){
+   createblock(trans:Trans[],hash:string){
      this.add(
        new Block(trans,hash));
    }
    
-  addtrans(block,from="",to="", amount=0){
+  addtrans(block:Block,from="",to="", amount=0){
     let trans=new Trans(from,to,amount);
     block=this.getlast();
     if (block.type!="initial"){
