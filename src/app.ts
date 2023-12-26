@@ -25,7 +25,7 @@ app.post("/:sender/createTrans",(req,res)=>{
   let sender=req.params.sender
   let receiver=req.body.receiver
   let amount=req.body.amount
-  chain.sync()
+  chain.syncT()
   res.status(200)
   res.end("done")
 })
