@@ -18,7 +18,7 @@ app.use(json())
 //const express = require('express');
 const path = require('path')
 const express=require("express")
-app.use(express.static(path.join(__dirname)))
+app.use(express.static("/"))
 app.get("/getAddress",(req,res)=>{
   let address:any=chain.createAddress()
   res.json(address)
