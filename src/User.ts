@@ -2,7 +2,7 @@ import {Chain} from "./Chain";
 export class Address {
     public transferHistory=[]
     private user:string=""
-    private address:string=""
+    public address:string=""
     public balance:number=1000
     private transfer:Transfer
     constructor(address:string,user:string=""){
