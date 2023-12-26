@@ -55,11 +55,11 @@ export class Chain
     let crypt:any;
     import("crypto").then(crypt=>{
 
-     crypt.randomBytes(64,(err,buff)=>{
+     crypt.randomBytes(128,(err,buff)=>{
      if(err)console.log(err)
-     else console.log((buff+Buffer.
-     from(Chain.address.toString())
-     .toString("hex")))
+     else 
+      let b=buff+Buffer.from(Chain.address.toString())
+      console.log(b)
      })
     }).catch(console.log)
     
