@@ -78,7 +78,7 @@ export class Chain
         fs.exists("chain.json",(exists:boolean)=>{
           if(exists==false){
               fs.writeFile("chain.json",JSON.stringify(c),{
-                  encoding:"uft-8"
+                  encoding:"utf-8"
               },(err:any)=>{
                   if(err) console.log(err)
                   else console.log("done")
