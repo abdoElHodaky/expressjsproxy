@@ -1,10 +1,11 @@
+let crypt=require("crypto")
 export class Trans{
-  private from=""
-  private to=""
-  private amount=0
-  private hash="" 
-  private timestamp=0
-  private blchash=""
+  private from:string=""
+  private to:string=""
+  private amount:number=0
+  private hash:string="" 
+  private timestamp:number=0
+  private blchash:string=""
   constructor(from,to,amount){
     this.from=from
     this.to=to
