@@ -1,11 +1,11 @@
 let crypt=require("crypto")
 import {Trans} from "./Trans"
 export class Block{
-  type:string=""
-  trans:Trans[]=[]
-  prevhash:string=""
-  hash:string=""
-  timestamp:number=0
+  private type:string=""
+  private trans:Trans[]=[]
+  private prevhash:string=""
+  private hash:string=""
+  private timestamp:number=0
   constructor(trans,prevhash="",timestamp=Date.now()){
     this.prevhash=prevhash
     this.trans=trans
