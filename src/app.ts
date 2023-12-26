@@ -15,8 +15,9 @@ app.use(json())
 //app.use(apiv1)
 const path = require('path')
 app.use('/static', express.static(path.join(__dirname, 'public')))
-app.get("/",(req,res)=>{
-  res.json(chain)
+app.get("/getAddress",(req,res)=>{
+  let address:any=chain.createAddress()
+  res.json(address)
 })
 app.post("/:sender/createTrans",(req,res)=>{
   let sender=req.params.sender
