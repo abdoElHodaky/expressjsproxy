@@ -5,7 +5,7 @@ export class Address {
     private address:string=""
     private balance:number=1000
     private transfer:Transfer
-    constructor(address:string,user=""){
+    constructor(address:string,user:string=""){
         this.address=address
         this.user=user
     }
