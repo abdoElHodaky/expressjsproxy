@@ -2,7 +2,7 @@ import {Chain} from "./Chain"
 import {Trans} from "./Trans"
 export class Explorer {
   private chain:Chain
-  constructor (chain){
+  constructor (chain:Chain){
     this.chain=chain;
   }
   getTrans(txhash:string){
