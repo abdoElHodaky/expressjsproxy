@@ -18,7 +18,7 @@ export class Explorer {
     }
     else{
       blocks.filter(b=>{
-      b.trans.map(trans.push)})
+      b.trans.map(t=>trans.push)})
       return trans
   }
 }
