@@ -85,7 +85,7 @@ export class Chain
               })
           }
           else{
-              c=JSON.parse(fs.readFileSync("chain.json"))
+              c=JSON.parse(JSON.stringify(fs.readFileSync("chain.json")))
               this.blocks=c.blocks
               this.addresses=c.addresses
           }
