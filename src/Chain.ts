@@ -70,8 +70,9 @@ export class Chain
  syncT(){
       let c:Chain =this
       let _fs:any;
-      import("fs").then(fs=>{_fs=fs}).catch(console.log)
-      _fs.exists("chain.json",(exists:boolean)=>{
+      import("fs").then(fs=>{
+
+        fs.exists("chain.json",(exists:boolean)=>{
           if(exists==false){
               _fs.writeFile("chain.json",JSON.stringify(c),{
                   encoding:"uft-8"
@@ -85,7 +86,10 @@ export class Chain
               this.blocks=c.blocks
               this.addresses=c.addresses
           }
-      })
+        })
+
+       
+      }).catch(console.log)
  }
-    
+}
                                           }
