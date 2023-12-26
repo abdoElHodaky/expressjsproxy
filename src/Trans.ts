@@ -3,7 +3,7 @@ export class Trans{
   private from:string=""
   private to:string=""
   private amount:number=0
-  private hash:string="" 
+  public hash:string="" 
   private timestamp:number=0
   private blchash:string=""
   constructor(from:string,to:string,amount:number){
