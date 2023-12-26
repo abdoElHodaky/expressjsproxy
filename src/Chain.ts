@@ -51,7 +51,7 @@ export class Chain
    this.getlast().addtrans(trans);
    Block.updatetransSblchash(this.getlast())
   }
- createAddress(user:string=""){
+ createAddress(user:string=""):Address {
     let crypt:any;
     import("crypto").then(c=>{
 
@@ -67,6 +67,7 @@ export class Chain
     address.setTransfer(this)
     this.addresses.push(address.address)
     Chain.address+=1
+    console.log(address)
     return address 
  }
 
