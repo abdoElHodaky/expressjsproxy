@@ -19,9 +19,11 @@ app.use(json())
 const path = require('path')
 const express=require("express")
 app.use(express.static("/"))
-app.get("/getAddress",(req,res)=>{
+app.get("/genAddress",(req,res)=>{
   let address:any=chain.createAddress()
-  res.json(address)
+  res.json({
+    address: address.address
+  })
 })
 app.post("/:sender/createTrans",(req,res)=>{
   let sender=req.params.sender
