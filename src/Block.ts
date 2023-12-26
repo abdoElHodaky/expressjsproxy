@@ -6,14 +6,14 @@ export class Block{
   private prevhash:string=""
   private hash:string=""
   private timestamp:number=0
-  constructor(trans,prevhash="",timestamp=Date.now()){
+  constructor(trans:Trans[],prevhash:string="",timestamp:number=Date.now()){
     this.prevhash=prevhash
     this.trans=trans
     this.timestamp=timestamp
     
     this.ghash()
   }
-  addtrans(trans){
+  addtrans(trans:Trans){
    
   this.trans.push(trans)
   this.ghash()
@@ -31,7 +31,7 @@ export class Block{
     
     
   }
-  static updatetransSblchash(block){
+  static updatetransSblchash(block:Block){
    block.trans.map(t=>t.setblchash(block.hash))    
   }
 }
