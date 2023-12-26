@@ -6,7 +6,7 @@ export class Trans{
   private hash:string="" 
   private timestamp:number=0
   private blchash:string=""
-  constructor(from,to,amount){
+  constructor(from:string,to:string,amount:number){
     this.from=from
     this.to=to
     this.amount=amount 
