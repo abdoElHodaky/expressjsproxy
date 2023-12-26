@@ -1,3 +1,7 @@
+import {Address} from "./User"
+import {Block} from"./Block"
+import {Trans} from "./Trans"
+
 export class Chain
 {
  private fee=0.00001
