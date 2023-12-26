@@ -22,7 +22,7 @@ export class Explorer {
       return trans
   }
 }
-  getBlock(blhash){
+  getBlock(blhash:string){
     let blocks=this.chain.blocks;
     blocks=blocks.slice(1,blocks.length);
     let d=blocks.find(b=>{
