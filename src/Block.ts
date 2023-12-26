@@ -1,3 +1,4 @@
+let crypt=require("crypto")
 import {Trans} from "./Trans"
 export class Block{
   type:string=""
