@@ -1,9 +1,10 @@
+import {Trans} from "./Trans"
 export class Block{
-  type=""
-  trans=[]
-  prevhash=""
-  hash=""
-  timestamp=0
+  type:string=""
+  trans:Trans[]=[]
+  prevhash:string=""
+  hash:string=""
+  timestamp:number=0
   constructor(trans,prevhash="",timestamp=Date.now()){
     this.prevhash=prevhash
     this.trans=trans
