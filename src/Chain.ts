@@ -53,7 +53,7 @@ export class Chain
   }
  createAddress(user:string=""){
     let crypt:any;
-    import("crypto").then(c=>{cypt=c}).catch(console.log)
+    import("crypto").then(c=>{crypt=c}).catch(console.log)
     crypt.randomBytes(64,(err,buff)=>{
      if(err)console.log(err)
      else console.log((buff+Buffer.
