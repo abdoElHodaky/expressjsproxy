@@ -31,7 +31,7 @@ export class Chain
        new Block(trans,hash));
    }
    
-  addtrans(block:Block,from="",to="", amount=0){
+  addtrans(block:Block,from:string="",to:string="", amount:number=0){
     let trans=new Trans(from,to,amount);
     block=this.getlast();
     if (block.type!="initial"){
