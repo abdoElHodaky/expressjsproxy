@@ -22,6 +22,6 @@ export class Trans{
     
   }
   gethash(){return this.hash;}
-  setblchash(hash){this.blchash=hash;}
+  setblchash(hash:string){this.blchash=hash;}
   
 }
