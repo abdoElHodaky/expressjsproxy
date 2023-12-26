@@ -70,7 +70,7 @@ export class Chain
     address.setTransfer(this)
     this.addresses.push(address.address)
     Chain.address+=1
-    console.log(address)
+    console.log(address.address)
     return address 
  }
 
