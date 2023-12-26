@@ -1,7 +1,7 @@
 
 import "reflect-metadata";
 import application from "express"
-import { json,urlencoded,static } from "express";
+import { json,urlencoded } from "express";
 import cors from "cors";
 import {Chain} from "./Chain"
 import {Explorer} from "./Explorer"
@@ -17,7 +17,8 @@ app.use(json())
 //app.use(apiv1)
 //const express = require('express');
 const path = require('path')
-app.use(static(path.join(__dirname)))
+const express=require("express")
+app.use(express.static(path.join(__dirname)))
 app.get("/getAddress",(req,res)=>{
   let address:any=chain.createAddress()
   res.json(address)
