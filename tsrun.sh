@@ -1,3 +1,3 @@
-!/user/bin/bash
+#!/user/bin/bash
 npx tsc
 node ./dist/app.js
