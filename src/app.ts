@@ -21,7 +21,7 @@ const express=require("express")
 app.use(express.static("/"))
 app.get("/getAddress",(req,res)=>{
   let address:any=chain.createAddress()
-  res.status(200).json({
+  res.json({
     address:address.address
   })
 })
