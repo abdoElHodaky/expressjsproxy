@@ -58,8 +58,10 @@ export class Chain
      crypt.randomBytes(128,(err,buff)=>{
      if(err)console.log(err)
      else 
-      let b=buff+Buffer.from(Chain.address.toString())
-      console.log(b)
+     { 
+         let b=buff+Buffer.from(Chain.address.toString())
+         console.log(b)
+      }
      })
     }).catch(console.log)
     
