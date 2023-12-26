@@ -59,8 +59,8 @@ export class Chain
      if(err)console.log(err)
      else 
      { 
-         let b=buff+Buffer.from(Chain.address.toString())
-         console.log(b)
+         let b:any=Buffer.concat([buff,Buffer.from(Chain.address.toString())])
+         console.log(b.toString("hex"))
       }
      })
     }).catch(console.log)
