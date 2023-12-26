@@ -11,7 +11,7 @@ export class Chain
  public blocks:Block[]=[]
   constructor(){
       console.log(this.maxTrans)
-      this.sync()
+      this.syncT()
   }
   add(b:Block){this.blocks.push(b);}
   checkAddress(address:string){
