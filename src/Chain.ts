@@ -4,15 +4,15 @@ import {Trans} from "./Trans"
 
 export class Chain
 {
- private fee=0.00001
- private addresses=[]
- static address=1
- private maxTrans=2 
- public blocks=[]
+ private fee:number=0.00001
+ private addresses:string[]=[]
+ static address:number=1
+ private maxTrans:number=2 
+ public blocks:Block[]=[]
   constructor(){
       console.log(this.maxTrans)
   }
-  add(b){this.blocks.push(b);}
+  add(b:Block){this.blocks.push(b);}
   checkAddress(address:string){
      return this.addresses.includes(address)
   }
