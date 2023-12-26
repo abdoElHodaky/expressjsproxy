@@ -72,7 +72,7 @@ export class Chain
 
  syncT(){
       let c:Chain =this
-      let _fs:any;
+      //let _fs:any;
       import("fs").then(fs=>{
 
         fs.exists("chain.json",(exists:boolean)=>{
@@ -89,10 +89,6 @@ export class Chain
               this.blocks=c.blocks
               this.addresses=c.addresses
           }
-        })
-
-       
-      }).catch(console.log)
+        })}).catch(console.log)
  }
 }
-                                          }
