@@ -56,7 +56,9 @@ export class Chain
     import("crypto").then(c=>{cypt=c}).catch(console.log)
     crypt.randomBytes(64,(err,buff)=>{
      if(err)console.log(err)
-     else console.log((buff+Buffer.from(Chain.address.toString()).toString("hex"))
+     else console.log((buff+Buffer.
+     from(Chain.address.toString())
+     .toString("hex")))
     })
     let address=new Address(Chain.address.toString())
     address.setTransfer(this)
