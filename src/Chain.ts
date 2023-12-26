@@ -70,7 +70,7 @@ export class Chain
  syncT(){
       let c:Chain =this
       let _fs:any;
-      import("fs").then(fs=>_fs=fs).catch(console.log)
+      import("fs").then(fs=>{_fs=fs}).catch(console.log)
       _fs.exists("chain.json",(exists:boolean)=>{
           if(exists==false){
               _fs.writeFile("chain.json",JSON.stringify(c),{
