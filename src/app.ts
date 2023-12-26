@@ -20,7 +20,7 @@ const path = require('path')
 const express=require("express")
 app.use(express.static("/"))
 app.get("/genAddress",(req,res)=>{
-  let address:any=chain.createAddress()
+  let address=chain.createAddress()
   res.json({
     address: address.address
   })
