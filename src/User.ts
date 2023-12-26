@@ -36,6 +36,7 @@ export class Transfer {
       this.chain=chain
   }
   transfer(amount){
+      let chain=this.chain
       if ((chain.checkAddress(this.from.address))
           &&(chain.checkAddress(this.to.address)))
            {
