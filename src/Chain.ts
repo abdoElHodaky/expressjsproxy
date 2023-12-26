@@ -62,7 +62,7 @@ export class Chain
      { 
          let b=Buffer.concat([buff,Buffer.from(Chain.address.toString())])
          _address=b.toString("hex")
-         console.log(_addres)
+         console.log(_address)
          address=new Address(_address)
          address.setTransfer(this)
          this.addresses.push(address.address)
