@@ -52,7 +52,7 @@ export class Chain
    Block.updatetransSblchash(this.getlast())
   }
  createAddress(user:string=""):Address {
-    let _address:any;
+    let _address:any={};
     let address: Address
     import("crypto").then(crypt=>{
 
