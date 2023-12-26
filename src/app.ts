@@ -33,7 +33,7 @@ app.post("/:sender/createTrans",(req,res)=>{
 app.get("/explore/AllTrans",(req,res)=>{
   res.json(explorer.getTrans())
 })
-app.use((error:any, req:any, res:any, next:any) => {
+app.use("*",(error:any, req:any, res:any, next:any) => {
   console.log(error)
   console.log("Error Handling Middleware called")
   console.log('Path: ', req.path)
