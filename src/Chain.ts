@@ -77,7 +77,7 @@ export class Chain
 
         fs.exists("chain.json",(exists:boolean)=>{
           if(exists==false){
-              _fs.writeFile("chain.json",JSON.stringify(c),{
+              fs.writeFile("chain.json",JSON.stringify(c),{
                   encoding:"uft-8"
               },(err:any)=>{
                   if(err) console.log(err)
@@ -85,7 +85,7 @@ export class Chain
               })
           }
           else{
-              c=JSON.parse(_fs.readFileSync("chain.json"))
+              c=JSON.parse(fs.readFileSync("chain.json"))
               this.blocks=c.blocks
               this.addresses=c.addresses
           }
