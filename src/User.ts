@@ -3,7 +3,7 @@ export class Address {
     public transferHistory=[]
     private user:string=""
     private address:string=""
-    private balance:number=1000
+    public balance:number=1000
     private transfer:Transfer
     constructor(address:string,user:string=""){
         this.address=address
@@ -24,6 +24,9 @@ export class Address {
             amount:amount
         })
     }
+   /* setbalance(balance:number){
+        this.balance=balance 
+    }*/
     
 }
 
