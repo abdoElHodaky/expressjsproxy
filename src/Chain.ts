@@ -60,7 +60,7 @@ export class Chain
  }
 
  syncT(){
-      let c:Chain=this
+      let c:Chain =this
       let _fs:any;
       import("fs").then(fs=>_fs=fs).catch(console.log)
       _fs.exists("chain.json",exists=>{
