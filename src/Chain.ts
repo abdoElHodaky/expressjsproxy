@@ -52,7 +52,7 @@ export class Chain
    Block.updatetransSblchash(this.getlast())
   }
  createAddress(user:string=""):Address {
-    let address:any;
+    let _address:any;
     import("crypto").then(crypt=>{
 
      crypt.randomBytes(128,(err,buff)=>{
@@ -60,13 +60,13 @@ export class Chain
      else 
      { 
          let b=Buffer.concat([buff,Buffer.from(Chain.address.toString())])
-         address=b.toString("hex")
-         console.log(address)
+         _address=b.toString("hex")
+         console.log(_address)
       }
      })
     }).catch(console.log)
     
-    let address=new Address(address)
+    let address=new Address(_address)
     address.setTransfer(this)
     this.addresses.push(address.address)
     Chain.address+=1
