@@ -21,12 +21,12 @@ const express=require("express")
 const fs=require("fs")
 app.use(express.static("/"))
 app.get("/",(req,res)=>{
-  data=`===============Api Docs ===========`+"\n" +
+let data=`===============Api Docs ===========`+"\n" +
 "|Type|-|params|-|route|"+"\n"+
 "|Get|- |      |-|/genAddress| return generated address"+"\n"+
 "|Post|-|sender_address, receiver|-|/:sender/transfer|"+"\n"+
 "|Get| -|      |-|/explorer/AllTrans|"+"\n"+
-`================End=================`
+`================End=================`;
   
   console.log(fs.readFileSync("docs.txt"))
   res.send(data)
