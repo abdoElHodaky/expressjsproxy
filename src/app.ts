@@ -45,7 +45,7 @@ app.post("/:sender/createTrans",(req,res)=>{
   chain.syncT()
   res.status(200).end("done")
 })
-app.get("/explore/AllTrans",(req,res)=>{
+app.get("/explorer/AllTrans",(req,res)=>{
   res.json(explorer.getTrans())
 })
 app.use("*",(error:any, req:any, res:any, next:any) => {
