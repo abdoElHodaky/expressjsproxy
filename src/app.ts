@@ -21,16 +21,15 @@ const express=require("express")
 const fs=require("fs")
 app.use(express.static("/"))
 app.get("/",(req,res)=>{
-  console.log(fs.readFileSync("docs.txt"))
-  res.send(`
-  ===============Api Docs ===========
-|Type|-|params|-|route|
-|Get|- |      |-|/genAddress| return generated address
-|Post|-|sender_address, receiver|-|/:sender/transfer|
-|Get| -|      |-|/explorer/AllTrans|
-================End=================
+  data=`===============Api Docs ===========`+"\n" +
+"|Type|-|params|-|route|"+"\n"+
+"|Get|- |      |-|/genAddress| return generated address"+"\n"+
+"|Post|-|sender_address, receiver|-|/:sender/transfer|"+"\n"+
+"|Get| -|      |-|/explorer/AllTrans|"+"\n"+
+`================End=================`
   
-  `)
+  console.log(fs.readFileSync("docs.txt"))
+  res.send(data)
 })
 app.get("/genAddress",(req,res)=>{
   let address=chain.createAddress()
