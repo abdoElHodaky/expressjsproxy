@@ -5,7 +5,8 @@ import {Trans} from "./Trans"
 export class Chain
 {
  private fee:number=0.0001
- private address0="00000000000000000000"
+ private Supply=30*Math.pow(10,20)
+ private address0="0"*16
  private addresses:string[]=[]
  static address:number=1
  private maxTrans:number=2 
