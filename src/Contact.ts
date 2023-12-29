@@ -7,4 +7,5 @@ export class Contract{
  private tradeble:boolean
  approve(){}
  revoke(){}
+ burn(){}
 }
