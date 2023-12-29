@@ -4,7 +4,8 @@ import {Trans} from "./Trans"
 
 export class Chain
 {
- private fee:number=0.00001
+ private fee:number=0.0001
+ private address0="00000000000000000000"
  private addresses:string[]=[]
  static address:number=1
  private maxTrans:number=2 
@@ -55,26 +56,7 @@ export class Chain
     let _address:any={};
     let address: Address
     let crypt=require("crypto")
-    /*import("crypto").then(crypt=>{
-
-     crypt.randomBytes(56,(err,buff)=>{
-     if(err)console.log(err)
-     else 
-     { 
-         let b=Buffer.concat([buff,Buffer.from(Chain.address.toString())])
-         _address=b.toString("hex")
-         console.log(_address)
-         address=new Address(_address)
-         address.setTransfer(this)
-         this.addresses.push(address.address)
-         Chain.address+=1
-        
-      }
-     })
-    }).catch(console.log)
-    console.log(address)
-    return address */
-    let buff=crypt.randomBytes(56)
+    let buff=crypt.randomBytes(32)
     let b=Buffer.concat([buff,Buffer.from(Chain.address.toString())])
     _address=b.toString("hex")
          //console.log(_address)
