@@ -3,7 +3,7 @@ import {Trans} from "./Trans"
 export class Block{
   private contracts=[];
   public type:string=""
-  private trans:Trans[]=[]
+  public trans:Trans[]=[]
   private prevhash:string=""
   private hash:string=""
   private timestamp:number=0
