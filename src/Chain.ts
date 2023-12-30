@@ -104,7 +104,7 @@ export class Chain
         })}).catch(console.log)
  }
  valid(){
-  for(var i=1;i<=this.bkocks.length-1;i++){
+  for(var i=1;i<=this.blocks.length-1;i++){
    if(this.blocks[i+1].prevhash==this.blocks[i].hash)
     return true
    else 
