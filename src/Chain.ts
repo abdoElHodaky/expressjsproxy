@@ -6,7 +6,7 @@ export class Chain
 {
  private fee:number=0.0001
  private Supply:number=30*Math.pow(10,20)
- private address0:string="0"*16
+ private address0:string="0".repeat(16)
  private addresses:string[]=[]
  static address:number=1
  private maxTrans:number=2 
