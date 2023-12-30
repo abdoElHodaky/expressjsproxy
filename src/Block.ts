@@ -12,12 +12,12 @@ export class Block{
     this.trans=trans
     this.timestamp=timestamp
     
-    this.ghash()
+    //this.ghash()
   }
   addtrans(trans:Trans){
    
   this.trans.push(trans)
-  this.ghash()
+  //this.ghash()
     
     
   }
