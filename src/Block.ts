@@ -2,7 +2,7 @@ let crypt=require("crypto")
 import {Trans} from "./Trans"
 export class Block{
   private contracts=[];
-  private type:string=""
+  public type:string=""
   private trans:Trans[]=[]
   private prevhash:string=""
   private hash:string=""
