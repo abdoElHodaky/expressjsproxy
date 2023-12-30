@@ -11,6 +11,7 @@ export class Chain
  static address:number=1
  private maxTrans:number=2 
  public blocks:Block[]=[]
+ public pending_trans=[]
   constructor(){
       console.log(this.maxTrans)
       this.syncT()
