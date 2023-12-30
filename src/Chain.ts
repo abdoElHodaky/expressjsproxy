@@ -75,9 +75,6 @@ export class Chain
  confirm(){
  let lastblock= this.getlast()
  let trans=this.pending_trans
-/* for(var i of trans){
-  lastblock.trans.push(i)
- }*/
   trans.map(t=>{
    this.getlast().addtrans(t)
   })
@@ -106,8 +103,8 @@ export class Chain
         })}).catch(console.log)
  }
  valid(){
-  for(var i in this.blocks){
-   if(this.blocks[i+1].prevhash==this.blocks[i])
+  for(var i=1;i<=this.bkocks.length-1;i++){
+   if(this.blocks[i+1].prevhash==this.blocks[i].hash)
     return true
    else 
     return false 
