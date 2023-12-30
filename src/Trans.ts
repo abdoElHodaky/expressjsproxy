@@ -5,7 +5,7 @@ export class Trans{
   private amount:number=0
   public hash:string="" 
   private timestamp:number=0
-  private blchash:string=""
+  //private blchash:string=""
   constructor(from:string,to:string,amount:number){
     this.from=from
     this.to=to
@@ -22,6 +22,6 @@ export class Trans{
     
   }
   gethash(){return this.hash;}
-  setblchash(hash:string){this.blchash=hash;}
+  //setblchash(hash:string){this.blchash=hash;}
   
 }
