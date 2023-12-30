@@ -105,7 +105,7 @@ export class Chain
           }
         })}).catch(console.log)
  }
- vaild(){
+ valid(){
   for(var i in this.blocks){
    if(this.blocks[i+1].prevhash==this.blocks[i])
     return true
