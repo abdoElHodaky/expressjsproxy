@@ -28,7 +28,7 @@ let data=`===============Api Docs ===========`+"\n" +
 "|Get| -|      |-|/explorer/AllTrans|"+"\n"+
 `================End=================`;
   
-  console.log(fs.readFileSync("docs.txt"))
+  //console.log(fs.readFileSync("docs.txt"))
   res.send(data)
 })
 app.get("/genAddress",(req,res)=>{
