@@ -4,7 +4,7 @@ export class Block{
   private contracts=[];
   public type:string=""
   public trans:Trans[]=[]
-  private prevhash:string=""
+  public prevhash:string=""
   public hash:string=""
   private timestamp:number=0
   constructor(trans:Trans[],prevhash:string="",timestamp:number=Date.now()){
