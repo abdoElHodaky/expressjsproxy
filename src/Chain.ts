@@ -80,6 +80,7 @@ export class Chain
   })
   this.getlast().ghash()
   this.valid()
+  this.pending_trans=[]
  }
  syncT(){
       let c:Chain =this
