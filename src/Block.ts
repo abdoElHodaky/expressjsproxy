@@ -32,8 +32,8 @@ export class Block{
     
     
   }
-  static updatetransSblchash(block:Block){
+ /* static updatetransSblchash(block:Block){
    block.trans.map(t=>t.setblchash(block.hash))    
-  }
+  }*/
   
 }
