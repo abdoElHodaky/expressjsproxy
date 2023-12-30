@@ -75,11 +75,14 @@ export class Chain
  confirm(){
  let lastblock= this.getlast()
  let trans=this.pending_trans
- for(var i of trans){
+/* for(var i of trans){
   lastblock.trans.push(i)
- }
-  lastblock.ghash()
-  
+ }*/
+  trans.map(t=>{
+   this.lastblock().addtrans(t)
+  })
+  this.lastblock().ghash()
+  this.valid()
  }
  syncT(){
       let c:Chain =this
