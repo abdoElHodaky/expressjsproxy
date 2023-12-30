@@ -4,7 +4,7 @@ export class Address {
     private tokens=[];
     private user:string=""
     public address:string=""
-    private balance:number=1000
+    public balance:number=1000
     private transfer:Transfer
     constructor(address:string,user:string=""){
         this.address=address
