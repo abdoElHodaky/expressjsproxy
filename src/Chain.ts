@@ -27,6 +27,7 @@ export class Chain
    {
     let block=new Block([]);
      block.type="initial";
+     block.ghash()
      this.add(block);
    }
    createblock(trans:Trans[],hash:string){
@@ -51,7 +52,7 @@ export class Chain
    }
    
    this.getlast().addtrans(trans);
-   Block.updatetransSblchash(this.getlast())
+  // Block.updatetransSblchash(this.getlast())
   }
  createAddress(user:string=""):Address {
     let _address:any={};
@@ -90,5 +91,13 @@ export class Chain
               this.addresses=c.addresses
           }
         })}).catch(console.log)
+ }
+ vaild(){
+  for(var i in this.blocks){
+   if(this.blocks[i+1].prevhash==this.blocks[i])
+    return true
+   else 
+    return false 
+  }
  }
 }
