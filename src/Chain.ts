@@ -11,7 +11,7 @@ export class Chain
  static address:number=1
  private maxTrans:number=2 
  public blocks:Block[]=[]
- public pending_trans=[]
+ private pending_trans:Trans[]=[]
   constructor(){
       console.log(this.maxTrans)
       this.syncT()
@@ -42,6 +42,7 @@ export class Chain
     if (block.type!="initial"){
        if(block.trans.length==this.maxTrans)
         {
+          this.confirm()
           this.createblock([],block.hash);
           
         }
@@ -51,8 +52,8 @@ export class Chain
   if(block.type=="initial"){
     this.createblock([],block.hash);
    }
-   
-   this.getlast().addtrans(trans);
+   this.pending_trans.push(trans)
+   //this.getlast().addtrans(trans);
   // Block.updatetransSblchash(this.getlast())
   }
  createAddress(user:string=""):Address {
@@ -71,7 +72,15 @@ export class Chain
     return address 
      
  }
-
+ confirm(){
+ let lastblock= this.getlast()
+ let trans=this.pending_trans
+ for(var i of trans){
+  lastblock.trans.push(i)
+ }
+  lastblock.ghash()
+  
+ }
  syncT(){
       let c:Chain =this
       //let _fs:any;
