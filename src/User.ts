@@ -3,7 +3,7 @@ export class Address {
     private transferHistory:any=[]
     private tokens=[];
     private user:string=""
-    private address:string=""
+    public address:string=""
     private balance:number=1000
     private transfer:Transfer
     constructor(address:string,user:string=""){
