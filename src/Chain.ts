@@ -79,9 +79,9 @@ export class Chain
   lastblock.trans.push(i)
  }*/
   trans.map(t=>{
-   this.lastblock().addtrans(t)
+   this.getlast().addtrans(t)
   })
-  this.lastblock().ghash()
+  this.getlast().ghash()
   this.valid()
  }
  syncT(){
