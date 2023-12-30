@@ -53,6 +53,7 @@ export class Chain
     this.createblock([],block.hash);
    }
    this.pending_trans.push(trans)
+   this.confirm()
    //this.getlast().addtrans(trans);
   // Block.updatetransSblchash(this.getlast())
   }
@@ -75,12 +76,14 @@ export class Chain
  confirm(){
  let lastblock= this.getlast()
  let trans=this.pending_trans
+  
   trans.map(t=>{
    this.getlast().addtrans(t)
   })
   this.getlast().ghash()
   this.valid()
   this.pending_trans=[]
+  
  }
  syncT(){
       let c:Chain =this
