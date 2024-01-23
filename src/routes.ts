@@ -19,4 +19,4 @@ routes.post("/:sender/createTrans",(req,res)=>{
 app.get("/explorer/AllTrans",(req,res)=>{
   res.json(explorer.getTrans())
 })
-export routes
+exports=routes
