@@ -30,7 +30,7 @@ let data=`===============Api Docs ===========`+"\n" +
 `================End=================`;
   
   //console.log(fs.readFileSync("docs.txt"))
-  res.send(data)
+  res.redirect("/apidocs")
 })
 /*app.get("/genAddress",(req,res)=>{
   let address=chain.createAddress()
@@ -58,7 +58,7 @@ app.use("*",(error:any, req:any, res:any, next:any) => {
 })
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('../swagger.json');
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/apidocs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
