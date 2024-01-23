@@ -5,6 +5,7 @@ import { json,urlencoded } from "express";
 import cors from "cors";
 import {Chain} from "./Chain"
 import {Explorer} from "./Explorer"
+import routes from "./routes"
 //import { AppDataSource } from "./_datasource";
 //import { apiv1 } from "./routes";
 const app=application();
@@ -48,6 +49,7 @@ app.post("/:sender/createTrans",(req,res)=>{
 app.get("/explorer/AllTrans",(req,res)=>{
   res.json(explorer.getTrans())
 })*/
+app.use("/",routes)
 app.use("*",(error:any, req:any, res:any, next:any) => {
   console.log(error)
   console.log("Error Handling Middleware called")
