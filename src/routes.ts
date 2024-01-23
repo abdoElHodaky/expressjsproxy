@@ -1,5 +1,6 @@
-import Router from "express";
-import chain,explorer from "./app";
+import Router from "express"
+import chain,explorer from "./app"
+
 export const routes=Router()
 
 routes.get("/genAddress",(req,res)=>{
@@ -9,6 +10,7 @@ routes.get("/genAddress",(req,res)=>{
     address: address.address
   })
 })
+
 routes.post("/:sender/createTrans",(req,res)=>{
   let sender=req.params.sender
   let receiver=req.body.receiver
@@ -16,6 +18,7 @@ routes.post("/:sender/createTrans",(req,res)=>{
   chain.syncT()
   res.status(200).end("done")
 })
-app.get("/explorer/AllTrans",(req,res)=>{
+
+routes.get("/explorer/AllTrans",(req,res)=>{
   res.json(explorer.getTrans())
 })
