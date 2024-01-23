@@ -7,7 +7,7 @@ routes.get("/genAddress",(req,res)=>{
   let address=chain.createAddress()
   console.log(address)
   res.json({
-    address: address.address
+    address: address
   })
 })
 
