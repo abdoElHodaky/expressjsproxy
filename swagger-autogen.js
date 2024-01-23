@@ -10,7 +10,7 @@ const config = {
     },
     tags: [ ],
     host: 'localhost:3000/api',
-    schemes: ['http', 'https'],
+    schemes: [],
 };
 
 swaggerAutogen(outputFile, endpointsFiles, config);
