@@ -9,8 +9,8 @@ import {Explorer} from "./Explorer"
 //import { apiv1 } from "./routes";
 const app=application();
 const port = process.env.PORT||3000
-const chain= new Chain()
-const explorer=new Explorer(chain)
+export const chain= new Chain()
+export const explorer=new Explorer(chain)
 app.use(urlencoded({extended: true}))
 app.use(cors())
 app.use(json())
@@ -31,7 +31,7 @@ let data=`===============Api Docs ===========`+"\n" +
   //console.log(fs.readFileSync("docs.txt"))
   res.send(data)
 })
-app.get("/genAddress",(req,res)=>{
+/*app.get("/genAddress",(req,res)=>{
   let address=chain.createAddress()
   console.log(address)
   res.json({
@@ -47,7 +47,7 @@ app.post("/:sender/createTrans",(req,res)=>{
 })
 app.get("/explorer/AllTrans",(req,res)=>{
   res.json(explorer.getTrans())
-})
+})*/
 app.use("*",(error:any, req:any, res:any, next:any) => {
   console.log(error)
   console.log("Error Handling Middleware called")
