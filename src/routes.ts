@@ -14,7 +14,7 @@ routes.get("/genAddress",(req,res)=>{
 routes.post("/:sender/createTrans",(req,res)=>{
   let sender=req.params.sender
   let receiver=req.body.receiver
-  let amount=req.body.amount
+  let amount:number=req.body.amount
   chain.syncT()
   res.status(200).end("done")
 })
