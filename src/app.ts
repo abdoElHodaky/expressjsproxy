@@ -5,7 +5,7 @@ import { json,urlencoded } from "express";
 import cors from "cors";
 import {Chain} from "./Chain"
 import {Explorer} from "./Explorer"
-import routes from "./routes"
+import {routes} from "./routes"
 //import { AppDataSource } from "./_datasource";
 //import { apiv1 } from "./routes";
 const app=application();
