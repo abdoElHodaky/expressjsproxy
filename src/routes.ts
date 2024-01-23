@@ -1,6 +1,6 @@
 import Router from "express"
 
-let routes=Router()
+export const routes=Router()
 
 routes.get("/genAddress",(req,res)=>{
   let address=chain.createAddress()
@@ -19,4 +19,3 @@ routes.post("/:sender/createTrans",(req,res)=>{
 app.get("/explorer/AllTrans",(req,res)=>{
   res.json(explorer.getTrans())
 })
-exports=routes
