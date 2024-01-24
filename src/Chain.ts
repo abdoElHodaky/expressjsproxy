@@ -9,9 +9,9 @@ export class Chain
  private address0:string="0".repeat(16)
  private addresses:string[]=[]
  static address:number=1
- private maxTrans:number=2 
+ public maxTrans:number=2 
  public blocks:Block[]=[]
- private pending_trans:Trans[]=[]
+ public pending_trans:Trans[]=[]
   constructor(){
       console.log(this.maxTrans)
       this.syncT()
