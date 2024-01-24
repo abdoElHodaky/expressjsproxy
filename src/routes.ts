@@ -33,7 +33,7 @@ routes.get("/explorer/AllTrans",(req,res)=>{
 routes.post("/confirm",(req,res)=>{
   if(chain.pending_trans.length>0)
     chain.confirm()
-    res.end("confirmed)
+    res.end("confirmed")
   else
     res.end("")
   
