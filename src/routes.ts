@@ -20,7 +20,6 @@ routes.post("/createTrans",(req,res)=>{
   sender.setTransfer(chain)
   receiver.setTransfer(chain)
   sender.transferTo(receiver,amount)
-  chain.syncT()
   request.post({
     url:"/confirm",
     function (error, response, body){
@@ -39,6 +38,7 @@ routes.get("/explorer/AllTrans",(req,res)=>{
 routes.post("/confirm",(req,res)=>{
   if(chain.pending_trans.length>=chain.maxTrans)
     chain.confirm()
+    chain.syncT()
     res.end("confirmed")
   else
     res.end("")
