@@ -21,6 +21,12 @@ routes.post("/createTrans",(req,res)=>{
   receiver.setTransfer(chain)
   sender.transferTo(receiver,amount)
   chain.syncT()
+  request.post({
+    url:"/confirm",
+    function (error, response, body){
+      res.send(body)
+    }
+  })
   res.status(200).json(
     [...sender.transferHistory.reverse()]
   )
