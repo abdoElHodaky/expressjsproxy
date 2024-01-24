@@ -11,12 +11,19 @@ routes.get("/genAddress",(req,res)=>{
   })
 })
 
-routes.post("/:sender/createTrans",(req,res)=>{
-  let sender=req.params.sender
+routes.post("/createTrans",(req,res)=>{
+  let sender=req.body.sender
   let receiver=req.body.receiver
   let amount:number=req.body.amount
+  //let addsender=new Address(sender)
+ // addsender.
+  sender.setTransfer(chain)
+  receiver.setTransfer(chain)
+  sender.transferTo(receiver,amount)
   chain.syncT()
-  res.status(200).end("done")
+  res.status(200).json(
+    [...sender.transferHistory.reverse()]
+  )
 })
 
 routes.get("/explorer/AllTrans",(req,res)=>{
