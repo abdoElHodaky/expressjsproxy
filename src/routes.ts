@@ -29,3 +29,12 @@ routes.post("/createTrans",(req,res)=>{
 routes.get("/explorer/AllTrans",(req,res)=>{
   res.json(explorer.getTrans())
 })
+
+routes.post("/confirm",(req,res)=>{
+  if(chain.pending_trans.length>0)
+    chain.confirm()
+    res.end("confirmed)
+  else
+    res.end("")
+  
+})
