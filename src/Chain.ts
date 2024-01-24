@@ -53,7 +53,7 @@ export class Chain
     this.createblock([],block.hash);
    }
    this.pending_trans.push(trans)
-   this.confirm()
+   //this.confirm()
    //this.getlast().addtrans(trans);
   // Block.updatetransSblchash(this.getlast())
   }
