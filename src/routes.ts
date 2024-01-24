@@ -2,7 +2,7 @@ import Router from "express"
 import {chain,explorer} from "./app"
 import {Address} from "./User"
 export const routes=Router()
-
+let request=require("request")
 routes.get("/genAddress",(req,res)=>{
   let address=chain.createAddress()
   console.log(address)
@@ -37,9 +37,10 @@ routes.get("/explorer/AllTrans",(req,res)=>{
 
 routes.post("/confirm",(req,res)=>{
   if(chain.pending_trans.length>=chain.maxTrans)
-    chain.confirm()
+  { chain.confirm()
     chain.syncT()
     res.end("confirmed")
+  }
   else
     res.end("")
   
