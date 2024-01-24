@@ -1,6 +1,6 @@
 import Router from "express"
 import {chain,explorer} from "./app"
-
+import {Address} from "./User"
 export const routes=Router()
 
 routes.get("/genAddress",(req,res)=>{
