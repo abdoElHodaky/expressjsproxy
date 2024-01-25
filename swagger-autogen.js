@@ -5,11 +5,11 @@ const endpointsFiles = ['./dist/routes.js'];
 
 const config = {
     info: {
-        title: 'Blog API Documentation',
+        title: 'BlockChain API Documentation',
         description: '',
     },
     tags: [ ],
-    host: 'localhost:3000/api',
+    host: 'localhost/api',
     schemes: [],
 };
 
