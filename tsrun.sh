@@ -1,4 +1,4 @@
 #!/user/bin/bash
 npx tsc
-node swagger-autogen.js
+node swagautogen.js
 node ./dist/app.js
