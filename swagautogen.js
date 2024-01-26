@@ -9,7 +9,7 @@ const config = {
         description: '',
     },
     tags: [ ],
-    host: 'localhost',
+    host: '',
     schemes: [],
 };
 
