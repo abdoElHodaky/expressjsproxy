@@ -22,33 +22,9 @@ const express=require("express")
 const fs=require("fs")
 app.use(express.static("/"))
 app.get("/",(req,res)=>{
-let data=`===============Api Docs ===========`+"\n" +
-"|Type|-|params|-|route|"+"\n"+
-"|Get|- |      |-|/genAddress| return generated address"+"\n"+
-"|Post|-|sender_address, receiver|-|/:sender/transfer|"+"\n"+
-"|Get| -|      |-|/explorer/AllTrans|"+"\n"+
-`================End=================`;
-  
-  //console.log(fs.readFileSync("docs.txt"))
   res.redirect("/apidocs")
 })
-/*app.get("/genAddress",(req,res)=>{
-  let address=chain.createAddress()
-  console.log(address)
-  res.json({
-    address: address.address
-  })
-})
-app.post("/:sender/createTrans",(req,res)=>{
-  let sender=req.params.sender
-  let receiver=req.body.receiver
-  let amount=req.body.amount
-  chain.syncT()
-  res.status(200).end("done")
-})
-app.get("/explorer/AllTrans",(req,res)=>{
-  res.json(explorer.getTrans())
-})*/
+
 app.use("/api",routes)
 app.use("*",(error:any, req:any, res:any, next:any) => {
   console.log(error)
