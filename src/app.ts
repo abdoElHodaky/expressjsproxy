@@ -18,16 +18,19 @@ const express=require("express")
 const fs=require("fs")
 app.use(express.static("/"))
 app.get("/",(req,res)=>{
-  //res.redirect("/apidocs")
+  res.redirect("/docs")
 })
 
-//app.use("/api",routes)
+app.use("/proxy/",routes)
 app.use("*",(error:any, req:any, res:any, next:any) => {
   console.log(error)
   console.log("Error Handling Middleware called")
   console.log('Path: ', req.path)
   next() // (optional) invoking next middleware
 })
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('../swagger.json');
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
