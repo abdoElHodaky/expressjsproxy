@@ -6,7 +6,7 @@ export class Client {
         
     }
     
-    processRequest(options:RequestOptions){
+    processRequest(options){
         request(options, function (error, response, body) { 
          this.result=body
     }
