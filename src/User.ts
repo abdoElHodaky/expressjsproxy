@@ -6,11 +6,19 @@ export class Client {
         
     }
     
-    processRequest(options){
+    processRequest(options:RequestOptions){
         request(options, function (error, response, body) { 
          this.result=body
     }
    
     
+}
+
+export class RequestOptions{
+   public url:string
+   public method:string 
+   public headers:{}
+   public body:string
+  
 }
 
